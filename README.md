@@ -1,5 +1,11 @@
 # Student Performance Prediction System
 
+**The Project made by**
+
+**Omar Aitimbet** with ID: **220103131**
+
+**Dinmukhamed Sapybek** with ID: **220103053**
+
 This repository contains a machine learning project designed to predict student performance based on various factors such as gender, age, GPA, and other demographic variables. Using machine learning models like Logistic Regression, Decision Trees, and Random Forest, this system predicts whether a student is likely to succeed or fail academically.
 
 ## Project Overview
@@ -21,23 +27,22 @@ To run this project, you will need Python 3.7 or higher. You can install the req
 
 ```bash
 pip install -r requirements.txt
-
 ```
 The following libraries are required:
 
-Pandas
+- **Pandas**
 
-NumPy
+- **NumPy**
 
-scikit-learn
+- **scikit-learn**
 
-Streamlit
+- **Streamlit**
 
-joblib
+- **joblib**
 
-Matplotlib
+- **Matplotlib**
 
-Seaborn
+- **Seaborn**
 
 ## Project Structure
 Here is the structure of the project:
@@ -138,6 +143,33 @@ weighted avg       0.90      0.90      0.90      1160
 ## Streamlit Application
 The project includes a **Streamlit application** that allows users to input student data (such as gender, age, GPA, etc.) and get predictions on whether the student is likely to succeed or fail academically.
 
+Before running streamlit you have opportunity to run the application using this link:
+```link
+https://studentacademicsuccesssystem14-p-nosqllite.streamlit.app/
+Or
+With SqlLite
+https://studentacademicsuccesssystem14-p-withsqllite.streamlit.app/
+```
+If you want to run by terminal or if there was some issues with link try to do steps below:
+
+Firstly change the path into right form:
+```bash
+cd C:\Users\yourpath\Studen_Academic_Success_System_14-P\.venv\
+
+in my case:
+cd C:\Users\Омар\PycharmProjects\Studen_Academic_Success_System_14-P\.venv\
+```
+
+And you should fully change the paths of each models
+
+```python
+dt_model = joblib.load('yourpath/.venv/Trained models/decision_tree_model.joblib')
+lr_model = joblib.load('yourpath/.venv/Trained models/logistic_regression_model.joblib')
+rf_model = joblib.load('yourpath/.venv/Trained models/random_forest_model.joblib')
+scaler = joblib.load('yourpath/.venv/Trained models/scaler.joblib')
+columns = joblib.load('yourpath/.venv/Trained models/columns.joblib')  # Load the columns used during training
+```
+
 To run the app, use the following command:
 ```bash
 streamlit run src/streamlitApp.py
@@ -190,10 +222,25 @@ Once training is complete, the system outputs:
 **User Prediction:** The system predicts whether a student is likely to succeed or fail academically based on input data.
 
 ## Acknowledgements
-The dataset used in this project is publicly available.
+The dataset used in this project is given by SDU teachers.
 
 This project uses machine learning algorithms from scikit-learn.
 
 The Streamlit library is used to create an interactive web app for making predictions.
 
-Special thanks to the Kaggle and OpenAI community for providing valuable resources and tools.
+Special thanks to the SDU University community for providing valuable resources.
+
+**And special thanks for Bakdaulet and Sufyan teachers for this great semestr and we wish all the best for both teachers:)**
+
+## References
+“Artificial intelligence modern Application”-Stuart Russel, Peter Norvig
+https://youtube.com/playlist?list=PLa6CNrvKM5QU7AjAS90zCMIwi9RTFNIIW&feature=shared 
+https://support.zyte.com/support/solutions/articles/22000201935-deploying-a-project-from-a-github-repository
+https://habr.com/ru/articles/510934/
+https://scikit-learn.org/stable/ 
+https://habr.com/ru/articles/864890/
+https://www.datacamp.com/tutorial/random-forests-classifier-python
+https://asana.com/ru/resources/decision-tree-analysis
+https://habr.com/ru/companies/skillfactory/articles/675876/
+https://medium.com/@thomas.vidori/how-to-create-a-python-package-and-publish-it-on-github-eebc78b2a12d
+
