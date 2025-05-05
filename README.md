@@ -1,23 +1,27 @@
-# Student_Academic_Success_System_14-P
+# Student Performance Prediction System
 
-This repository contains a machine learning project designed to predict student performance using various machine learning models. The dataset comprises student performance data with features such as study hours, family background, and test scores. The project employs different models, such as Logistic Regression, Random Forest, and Decision Trees, to predict students' scores and categorize them into different performance levels.
+This repository contains a machine learning project designed to predict student performance based on various factors such as gender, age, GPA, and other demographic variables. Using machine learning models like Logistic Regression, Decision Trees, and Random Forest, this system predicts whether a student is likely to succeed or fail academically.
 
 ## Project Overview
-The goal of this project is to predict the performance of students based on multiple factors. The model is trained using student data to forecast performance outcomes, which can be used to provide better insights into student improvement areas.
 
-Key Features:
-Prediction of student performance using different machine learning models.
+The project is focused on predicting student performance using multiple machine learning algorithms and a clean dataset with features such as:
 
-Evaluation of model performance using accuracy, precision, recall, and F1 score.
+- **Gender**: Male or Female
+- **Age**: Age of the student
+- **Attestat GPA**: Grade Point Average
+- **Status**: Active or inactive student
+- **School Type**: Type of school the student attends (School or Lycee)
+- **Nationality**: One-hot encoded nationality features (e.g., Kazakh)
 
-Data preprocessing, feature scaling, and splitting techniques.
-
-Use of a Streamlit app to provide a user-friendly interface for making predictions.
+The project leverages different models and evaluates their accuracy in terms of predicting student performance. The results include classifications of "likely to succeed" or "likely to fail" based on the model's predictions.
 
 ## Requirements
-To run this project, you will need Python 3.7 or higher. You can install the required dependencies by using the following command:
+
+To run this project, you will need Python 3.7 or higher. You can install the required dependencies using the following command:
+
 ```bash
 pip install -r requirements.txt
+
 ```
 The following libraries are required:
 
@@ -62,95 +66,134 @@ Here is the structure of the project:
 └── pyvenv.cfg              # Virtual environment configuration
 ```
 ## Data Description
-The dataset contains data related to student performance. The files inside the data/ folder are as follows:
+The dataset contains data related to student performance. The files inside the ```data/``` folder are as follows:
 
-Reports (23).xlsx: An Excel file containing detailed reports of student performance.
+**Reports (23).xlsx:** An Excel file containing detailed reports of student performance.
 
-student_data.db: A SQLite database containing student-related data.
+**student_data.db:** A SQLite database containing student-related data.
 
-The_Final_Dataset.xlsx: The final cleaned and preprocessed dataset used for model training.
+**The_Final_Dataset.xlsx:** The final cleaned and preprocessed dataset used for model training.
+
+## Data Processing
+The data preprocessing pipeline includes:
+
+**One-Hot Encoding:** Categorical columns such as nationality are one-hot encoded.
+
+**Feature Scaling:** Data scaling is applied to numeric features (like GPA) to standardize them before training models.
+
+**Data Splitting:** The dataset is split into training, validation, and test sets to prevent overfitting and evaluate performance.
 
 ## Model Architecture
 This project utilizes several machine learning models to predict student performance:
 
-Decision Tree Classifier: A model that classifies students into different performance categories based on various features.
+**Decision Tree Classifier:** A model that classifies students into different performance categories based on various features.
 
-Logistic Regression: A classification algorithm used to predict binary outcomes.
+**Logistic Regression:** A classification algorithm used to predict binary outcomes.
 
-Random Forest Classifier: An ensemble model for classification tasks, offering better performance than individual decision trees.
+**Random Forest Classifier:** An ensemble model for classification tasks, offering better performance than individual decision trees.
 
 The models are trained and evaluated on the dataset, and the best-performing model is selected for predictions.
 
+## Model Evaluation
+Here are the performance results of the models:
+
+**Decision Tree Accuracy:** 88.45%
+
+**Logistic Regression Accuracy:** 88.88%
+
+**Random Forest Accuracy:** 89.57%
+
+The evaluation also includes detailed classification reports for each model:
+Decision Tree Classification Report:
+```bash
+              precision    recall  f1-score   support
+           0       0.82      0.86      0.84       405
+           1       0.92      0.90      0.91       755
+
+    accuracy                           0.88      1160
+   macro avg       0.87      0.88      0.87      1160
+weighted avg       0.89      0.88      0.89      1160
+```
+Logistic Regression Classification Report:
+```bash
+              precision    recall  f1-score   support
+           0       0.87      0.80      0.83       405
+           1       0.90      0.93      0.92       755
+
+    accuracy                           0.89      1160
+   macro avg       0.88      0.87      0.88      1160
+weighted avg       0.89      0.89      0.89      1160
+```
+Random Forest Classification Report:
+```bash
+              precision    recall  f1-score   support
+           0       0.84      0.87      0.85       405
+           1       0.93      0.91      0.92       755
+
+    accuracy                           0.90      1160
+   macro avg       0.88      0.89      0.89      1160
+weighted avg       0.90      0.90      0.90      1160
+```
+
 ## Streamlit Application
-A Streamlit application is included to provide a user interface for the prediction system. The app allows users to input student data, such as study hours and test scores, and get a prediction about their performance.
+The project includes a **Streamlit application** that allows users to input student data (such as gender, age, GPA, etc.) and get predictions on whether the student is likely to succeed or fail academically.
 
-streamlitApp.py: The main Streamlit app file that provides the front-end interface for users.
-
-streamlitAppSQLite.py: A variant of the Streamlit app that uses SQLite to store user predictions.
-
-## Training & Model Evaluation
-Hyperparameters:
-The models are trained with the following parameters:
-
-Decision Tree: Default hyperparameters used, with tuning options for depth and splits.
-
-Logistic Regression: Regularization parameter (C) is tuned for optimal performance.
-
-Random Forest: Tuned for the number of trees (n_estimators) and maximum depth.
-
-Model Evaluation Metrics:
-The model performance is evaluated based on the following metrics:
-
-Accuracy: Percentage of correct predictions.
-
-Precision: Measure of how many predicted positives are actual positives.
-
-Recall: Measure of how many actual positives are captured by the model.
-
-F1 Score: Harmonic mean of precision and recall.
-
-These metrics are used to compare model performance and determine which one is best suited for predicting student outcomes.
-
-## Usage
-1. Run the Streamlit App:
-To run the Streamlit app, use the following command:
+To run the app, use the following command:
 ```bash
 streamlit run src/streamlitApp.py
 ```
-This will launch a web interface where you can input student data and get a prediction.
+**streamlitApp.py:** The main Streamlit app file that provides the front-end interface for users.
 
-3. Train and Evaluate Models:
-To train and evaluate the models, run the following Jupyter notebooks:
+For a version that stores predictions in an SQLite database, run:
 
-Final-3.ipynb: The notebook for model training and evaluation.
-
-FinalPM.ipynb: The notebook for analyzing model performance.
-
-3. Saving and Loading Models:
-Once the models are trained, they are saved as .joblib files in the Trained models/ folder. These models can be loaded and used for making predictions.
-
-For example, to load a model and make predictions:
 ```bash
+streamlit run src/streamlitAppSQLite.py
+```
+
+**streamlitAppSQLite.py:** A variant of the Streamlit app that uses SQLite to store user predictions.
+
+## Training & Model Evaluation
+
+### Training the Models
+Training scripts are included in the ```Final-3.ipynb``` and ```FinalPM.ipynb``` Jupyter Notebooks. The models are trained with various hyperparameters and evaluated based on the following metrics:
+
+**Accuracy:** Percentage of correct predictions.
+
+**Precision:** Measure of correct positive predictions.
+
+**Recall:** Measure of correct identification of positive cases.
+
+**F1 Score:** Harmonic mean of precision and recall.
+
+## Saving Models and Scaler
+Once the models are trained, they are saved using ```joblib``` for later use. This includes saving the models, the scaler (used for feature scaling), and the column transformer for preprocessing.
+
+You can load these saved models with the following:
+```python
 from joblib import load
 
-# Load the trained model
-model = load('Trained models/random_forest_model.joblib')
+# Load the trained models
+dt_model = load('Trained models/decision_tree_model.joblib')
+lr_model = load('Trained models/logistic_regression_model.joblib')
+rf_model = load('Trained models/random_forest_model.joblib')
 
-# Make a prediction
-prediction = model.predict([[study_hours, test_score]])
+# Load the scaler
+scaler = load('Trained models/scaler.joblib')
 ```
 ## Results
-Once the models are trained and evaluated, you will get the following results:
+Once training is complete, the system outputs:
 
-Training and evaluation metrics such as accuracy, precision, recall, and F1 score.
+**Model Accuracy:** A comparison of each model's accuracy.
 
-The best-performing model will be used for making future predictions.
+**Classification Reports:** Detailed metrics for each model (precision, recall, F1-score).
 
-Visualizations for model performance (e.g., confusion matrix, classification reports).
+**User Prediction:** The system predicts whether a student is likely to succeed or fail academically based on input data.
 
 ## Acknowledgements
 The dataset used in this project is publicly available.
 
-The project leverages machine learning algorithms from scikit-learn.
+This project uses machine learning algorithms from scikit-learn.
 
-Special thanks to Streamlit for providing an easy-to-use framework for the web interface.
+The Streamlit library is used to create an interactive web app for making predictions.
+
+Special thanks to the Kaggle and OpenAI community for providing valuable resources and tools.
