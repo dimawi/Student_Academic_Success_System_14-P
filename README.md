@@ -234,13 +234,22 @@ Special thanks to the SDU University community for providing valuable resources.
 
 ## References
 “Artificial intelligence modern Application”-Stuart Russel, Peter Norvig
+
 https://youtube.com/playlist?list=PLa6CNrvKM5QU7AjAS90zCMIwi9RTFNIIW&feature=shared 
+
 https://support.zyte.com/support/solutions/articles/22000201935-deploying-a-project-from-a-github-repository
+
 https://habr.com/ru/articles/510934/
+
 https://scikit-learn.org/stable/ 
+
 https://habr.com/ru/articles/864890/
+
 https://www.datacamp.com/tutorial/random-forests-classifier-python
+
 https://asana.com/ru/resources/decision-tree-analysis
+
 https://habr.com/ru/companies/skillfactory/articles/675876/
+
 https://medium.com/@thomas.vidori/how-to-create-a-python-package-and-publish-it-on-github-eebc78b2a12d
 
