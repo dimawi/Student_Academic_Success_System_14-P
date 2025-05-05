@@ -1,11 +1,5 @@
 # Student Performance Prediction System
 
-**The Project made by**
-
-**Omar Aitimbet** with ID: **220103131**
-
-**Dinmukhamed Sapybek** with ID: **220103053**
-
 This repository contains a machine learning project designed to predict student performance based on various factors such as gender, age, GPA, and other demographic variables. Using machine learning models like Logistic Regression, Decision Trees, and Random Forest, this system predicts whether a student is likely to succeed or fail academically.
 
 ## Project Overview
@@ -43,6 +37,30 @@ The following libraries are required:
 - **Matplotlib**
 
 - **Seaborn**
+
+## Technology Stack
+### 1. Programming Language
+**Python** – Core language used for data manipulation, analysis, modeling, and application deployment.
+
+### 2. Libraries & Frameworks
+**Pandas** – Data manipulation and analysis (tabular data).
+
+**NumPy** – Numerical computing and array operations.
+
+**Scikit-learn** – Machine learning models and evaluation metrics.
+
+**Matplotli**b – Data visualization using static plots.
+
+**Seaborn** – Statistical data visualization built on top of Matplotlib.
+
+**Streamlit** – Web application framework for deploying interactive ML apps.
+
+**joblib** – Model serialization and persistence (saving/loading models).
+
+### 3. Development Tools & Environments
+**PyCharm** – Integrated Development Environment (IDE) for Python programming.
+
+**Jupyter Notebook** – Interactive computing environment, often used for prototyping, data exploration, and documentation.
 
 ## Project Structure
 Here is the structure of the project:
@@ -252,4 +270,10 @@ https://asana.com/ru/resources/decision-tree-analysis
 https://habr.com/ru/companies/skillfactory/articles/675876/
 
 https://medium.com/@thomas.vidori/how-to-create-a-python-package-and-publish-it-on-github-eebc78b2a12d
+
+## Team Members
+
+**Omar Aitimbet** with ID: **220103131**
+
+**Dinmukhamed Sapybek** with ID: **220103053**
 
