@@ -5,11 +5,11 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 # Load the saved models and scaler
-dt_model = joblib.load('C:\\Users\\Омар\\PycharmProjects\\PMfinal\\.venv\\Trained models\\decision_tree_model.joblib')
-lr_model = joblib.load('C:\\Users\\Омар\\PycharmProjects\\PMfinal\\.venv\\Trained models\\logistic_regression_model.joblib')
-rf_model = joblib.load('C:\\Users\\Омар\\PycharmProjects\\PMfinal\\.venv\\Trained models\\random_forest_model.joblib')
-scaler = joblib.load('C:\\Users\\Омар\\PycharmProjects\\PMfinal\\.venv\\Trained models\\scaler.joblib')
-columns = joblib.load('C:\\Users\\Омар\\PycharmProjects\\PMfinal\\.venv\\Trained models\\columns.joblib')  # Load the columns used during training
+dt_model = joblib.load('.venv/Trained models/decision_tree_model.joblib')
+lr_model = joblib.load('.venv/Trained models/logistic_regression_model.joblib')
+rf_model = joblib.load('.venv/Trained models/random_forest_model.joblib')
+scaler = joblib.load('.venv/Trained models/scaler.joblib')
+columns = joblib.load('.venv/Trained models/columns.joblib')  # Load the columns used during training
 
 # Streamlit app title
 st.title('Student Academic Success Prediction')
